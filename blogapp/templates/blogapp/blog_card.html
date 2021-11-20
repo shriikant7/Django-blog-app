@@ -1,0 +1,17 @@
+<div class="col">
+    <div class="card shadow-sm">
+         <img src="{{post.thumbnails.url}}" height="250">
+            <div class="card-body">
+            <h5> {{post.title}} </h5>
+              <p class="card-text"> {{post.body|safe|truncatechars:9}} </p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'blogapp:single_post' post.id %}">View</a></button>
+                        {% if user.is_authenticated %}
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

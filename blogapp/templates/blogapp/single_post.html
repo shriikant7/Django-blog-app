@@ -1,0 +1,12 @@
+{% extends 'blogapp/blog_structure.html' %}
+
+{% block 'header_block' %}
+    <h1 class="text-center">{{post.title}}</h1>
+{% endblock 'header_block' %}
+
+{% block 'single_post_block' %}
+    <img src="{{post.thumbnails.url}}" class="img rounded mx-auto d-block my-5" />
+    <div>
+    {{post.body|safe}}
+    </div>
+{% endblock 'single_post_block' %}
